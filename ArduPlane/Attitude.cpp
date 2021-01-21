@@ -1016,6 +1016,15 @@ void Plane::set_servos(void)
         // damper to operate.
         channel_roll->output();
     }
+
+    // Hack to reverse elevator and ailerons
+    if (!channel_pitch->get_reverse()) {
+        channel_pitch->set_reverse();
+    }
+    if (!channel_roll->get_reverse()) {
+        channel_roll->set_reverse();
+    }
+
     channel_pitch->output();
     channel_throttle->output();
     channel_rudder->output();
