@@ -2,12 +2,16 @@
 #include <AP_RSSI/AP_RSSI.h>
 #include <AP_OpticalFlow/AP_OpticalFlow.h>
 
+void Plane::read_pressuresensorarray(void)
+{
+    pressuresensorarray.update();
+}
+
 /*
   read the rangefinder and update height estimate
  */
 void Plane::read_rangefinder(void)
 {
-
     // notify the rangefinder of our approximate altitude above ground to allow it to power on
     // during low-altitude flight when configured to power down during higher-altitude flight
     float height;

@@ -46,6 +46,7 @@
 #include <AP_RPM/AP_RPM.h>
 #include <AP_Stats/AP_Stats.h>     // statistics library
 #include <AP_Beacon/AP_Beacon.h>
+#include <AP_PressureSensorArray/AP_PressureSensorArray.h>
 
 #include <AP_AdvancedFailsafe/AP_AdvancedFailsafe.h>
 #include <APM_Control/APM_Control.h>
@@ -904,6 +905,7 @@ private:
     bool trim_radio();
     bool rc_throttle_value_ok(void) const;
     bool rc_failsafe_active(void) const;
+    void read_pressuresensorarray(void);
     void read_rangefinder(void);
     void read_airspeed(void);
     void rpm_update(void);

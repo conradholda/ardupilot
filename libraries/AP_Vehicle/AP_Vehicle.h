@@ -35,6 +35,8 @@
 #include <AP_ServoRelayEvents/AP_ServoRelayEvents.h>
 #include <AP_Hott_Telem/AP_Hott_Telem.h>
 
+#include <AP_PressureSensorArray/AP_PressureSensorArray.h>
+
 class AP_Vehicle : public AP_HAL::HAL::Callbacks {
 
 public:
@@ -124,6 +126,7 @@ protected:
     AP_InertialSensor ins;
     AP_Button button;
     RangeFinder rangefinder;
+    AP_PressureSensorArray pressuresensorarray;
 
     AP_RSSI rssi;
 

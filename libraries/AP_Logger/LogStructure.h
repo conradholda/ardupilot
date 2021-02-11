@@ -833,6 +833,26 @@ struct PACKED log_RFND {
 };
 
 /*
+ * Pressure Sensor Array Log
+ */
+struct PACKED log_PRESSARY {
+    LOG_PACKET_HEADER;
+    uint64_t time_us;
+    float pitch;
+    float p_rate;
+    uint16_t rx0;
+    uint16_t rx1;
+    uint16_t rx2;
+    uint16_t rx3;
+    uint16_t rx4;
+    uint16_t rx5;
+    uint16_t rx6;
+    uint16_t rx7;
+    uint16_t rx8;
+    uint16_t rx9;
+};
+
+/*
   terrain log structure
  */
 struct PACKED log_TERRAIN {
@@ -1800,6 +1820,8 @@ enum LogMessages : uint8_t {
     LOG_ARM_DISARM_MSG,
     LOG_OA_BENDYRULER_MSG,
     LOG_OA_DIJKSTRA_MSG,
+
+    LOG_PRESSARY_MSG,
 
     _LOG_LAST_MSG_
 };
